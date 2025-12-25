@@ -1,6 +1,6 @@
 # processor_bc.py
 from typing import Dict, Any
-from lerobot.policies.processing import PolicyProcessorPipeline, PolicyAction
+from lerobot.processor import PolicyProcessorPipeline, PolicyAction
 
 def make_bc_pre_post_processors(config):
     preprocessor = None # lerobot handles standard preprocessing

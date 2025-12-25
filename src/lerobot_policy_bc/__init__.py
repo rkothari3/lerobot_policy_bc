@@ -1,13 +1,22 @@
-"""
-LeRobot BC (Behavior Cloning) Policy
+# __init__.py
+"""BC package for LeRobot."""
 
-A CNN-based behavior cloning policy implementation for LeRobot.
-"""
+# Checks if lerobot is installed
+try:
+    import lerobot  # noqa: F401
+except ImportError:
+    raise ImportError(
+        "lerobot is not installed. Please install lerobot to use this policy package."
+    )
 
-from .configuration_bc import BCConfig
+# Imports policy classes so others can use
+from .configuration_bc import BCPolicyConfig
 from .modeling_bc import BCPolicy
-from .processor_bc import BCProcessor
+from .processor_bc import make_bc_pre_post_processors
 
-__all__ = ["BCConfig", "BCPolicy", "BCProcessor"]
-
-__version__ = "0.1.0"
+# Declares what's public via __all__ list
+__all__ = [
+    "BCPolicyConfig",
+    "BCPolicy",
+    "make_bc_pre_post_processors",
+]
