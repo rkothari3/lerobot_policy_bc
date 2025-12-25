@@ -87,3 +87,8 @@ class BCPolicy(PreTrainedPolicy):
         loss = nn.functional.mse_loss(predicted_actions, true_actions)
         
         return loss
+
+    # Select_action method: for inference
+    def select_action(self, batch: Dict[str, torch.Tensor]) -> torch.Tensor:
+        with torch.no_grad():  # Don't compute gradients (saves memory/speed)
+            return self.forward(batch)["action"]
