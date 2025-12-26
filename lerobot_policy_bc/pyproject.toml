@@ -1,0 +1,15 @@
+[project]
+name = "lerobot_policy_bc"
+version = "0.1.0"
+dependencies = [
+    "lerobot",
+    "torch",
+    "torchvision", 
+    "numpy",
+    "einops"
+]
+requires-python = ">= 3.11"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0"]
